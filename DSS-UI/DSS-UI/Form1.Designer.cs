@@ -29,10 +29,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuGradientPanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label8 = new System.Windows.Forms.Label();
             this.openFileDialogImageAvatar = new System.Windows.Forms.OpenFileDialog();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -41,8 +43,6 @@
             this.bunifuGradientPanel5 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.listViewImage = new System.Windows.Forms.ListView();
             this.bunifuGradientPanel4 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bunifuGradientPanel6 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -73,18 +73,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuGradientPanelTop = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.listViewPerson = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.dataGridViewDS = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuGradientPanelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,10 +99,8 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.panel1.SuspendLayout();
-            this.bunifuGradientPanel1.SuspendLayout();
-            this.bunifuGradientPanelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            bunifuGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDS)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -117,6 +114,45 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanelTop;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuGradientPanelTop
+            // 
+            this.bunifuGradientPanelTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanelTop.BackgroundImage")));
+            this.bunifuGradientPanelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanelTop.Controls.Add(this.bunifuImageButton1);
+            this.bunifuGradientPanelTop.Controls.Add(this.label8);
+            this.bunifuGradientPanelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuGradientPanelTop.GradientBottomLeft = System.Drawing.Color.Black;
+            this.bunifuGradientPanelTop.GradientBottomRight = System.Drawing.Color.Black;
+            this.bunifuGradientPanelTop.GradientTopLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanelTop.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanelTop.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanelTop.Name = "bunifuGradientPanelTop";
+            this.bunifuGradientPanelTop.Quality = 10;
+            this.bunifuGradientPanelTop.Size = new System.Drawing.Size(1000, 33);
+            this.bunifuGradientPanelTop.TabIndex = 0;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = global::DSS_UI.Properties.Resources.ic_close_white_24dp_1x;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(971, 6);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(22, 24);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 1;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(953, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 0;
             // 
             // openFileDialogImageAvatar
             // 
@@ -185,27 +221,26 @@
             // 
             this.bunifuGradientPanel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel5.BackgroundImage")));
             this.bunifuGradientPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel5.Controls.Add(this.bunifuCustomDataGrid1);
-            this.bunifuGradientPanel5.Controls.Add(this.bunifuThinButton22);
-            this.bunifuGradientPanel5.Controls.Add(this.listViewPerson);
+            this.bunifuGradientPanel5.Controls.Add(this.dataGridViewDS);
             this.bunifuGradientPanel5.Controls.Add(this.listViewImage);
             this.bunifuGradientPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel5.GradientBottomLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel5.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel5.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel5.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel5.Location = new System.Drawing.Point(0, 59);
+            this.bunifuGradientPanel5.Location = new System.Drawing.Point(0, 35);
             this.bunifuGradientPanel5.Name = "bunifuGradientPanel5";
             this.bunifuGradientPanel5.Quality = 10;
-            this.bunifuGradientPanel5.Size = new System.Drawing.Size(746, 476);
+            this.bunifuGradientPanel5.Size = new System.Drawing.Size(746, 500);
             this.bunifuGradientPanel5.TabIndex = 1;
             // 
             // listViewImage
             // 
             this.listViewImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewImage.ImeMode = System.Windows.Forms.ImeMode.On;
             this.listViewImage.Location = new System.Drawing.Point(0, 0);
             this.listViewImage.Name = "listViewImage";
-            this.listViewImage.Size = new System.Drawing.Size(746, 476);
+            this.listViewImage.Size = new System.Drawing.Size(746, 500);
             this.listViewImage.TabIndex = 0;
             this.listViewImage.UseCompatibleStateImageBehavior = false;
             // 
@@ -213,8 +248,8 @@
             // 
             this.bunifuGradientPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel4.BackgroundImage")));
             this.bunifuGradientPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel4.Controls.Add(this.bunifuFlatButton5);
-            this.bunifuGradientPanel4.Controls.Add(this.bunifuTextbox1);
+            this.bunifuGradientPanel4.Controls.Add(this.bunifuThinButton22);
+            this.bunifuGradientPanel4.Controls.Add(this.textBox1);
             this.bunifuGradientPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.bunifuGradientPanel4.GradientBottomLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel4.GradientBottomRight = System.Drawing.Color.White;
@@ -223,55 +258,8 @@
             this.bunifuGradientPanel4.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel4.Name = "bunifuGradientPanel4";
             this.bunifuGradientPanel4.Quality = 10;
-            this.bunifuGradientPanel4.Size = new System.Drawing.Size(746, 59);
+            this.bunifuGradientPanel4.Size = new System.Drawing.Size(746, 35);
             this.bunifuGradientPanel4.TabIndex = 0;
-            // 
-            // bunifuFlatButton5
-            // 
-            this.bunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton5.BorderRadius = 0;
-            this.bunifuFlatButton5.ButtonText = "Tìm kiếm";
-            this.bunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton5.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton5.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton5.Iconimage")));
-            this.bunifuFlatButton5.Iconimage_right = null;
-            this.bunifuFlatButton5.Iconimage_right_Selected = null;
-            this.bunifuFlatButton5.Iconimage_Selected = null;
-            this.bunifuFlatButton5.IconMarginLeft = 0;
-            this.bunifuFlatButton5.IconMarginRight = 0;
-            this.bunifuFlatButton5.IconRightVisible = false;
-            this.bunifuFlatButton5.IconRightZoom = 0D;
-            this.bunifuFlatButton5.IconVisible = false;
-            this.bunifuFlatButton5.IconZoom = 90D;
-            this.bunifuFlatButton5.IsTab = false;
-            this.bunifuFlatButton5.Location = new System.Drawing.Point(324, 7);
-            this.bunifuFlatButton5.Name = "bunifuFlatButton5";
-            this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton5.selected = false;
-            this.bunifuFlatButton5.Size = new System.Drawing.Size(143, 40);
-            this.bunifuFlatButton5.TabIndex = 1;
-            this.bunifuFlatButton5.Text = "Tìm kiếm";
-            this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton5.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // bunifuTextbox1
-            // 
-            this.bunifuTextbox1.BackColor = System.Drawing.Color.White;
-            this.bunifuTextbox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.BackgroundImage")));
-            this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuTextbox1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTextbox1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.Icon")));
-            this.bunifuTextbox1.Location = new System.Drawing.Point(3, 5);
-            this.bunifuTextbox1.Name = "bunifuTextbox1";
-            this.bunifuTextbox1.Size = new System.Drawing.Size(315, 42);
-            this.bunifuTextbox1.TabIndex = 0;
-            this.bunifuTextbox1.text = "";
             // 
             // tabPage2
             // 
@@ -813,57 +801,22 @@
             // 
             // bunifuGradientPanel1
             // 
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton3);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton4);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton2);
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton1);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.LightGoldenrodYellow;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.BlueViolet;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.BurlyWood;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.DarkSlateGray;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 33);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(240, 567);
-            this.bunifuGradientPanel1.TabIndex = 1;
-            // 
-            // bunifuFlatButton3
-            // 
-            this.bunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton3.BorderRadius = 0;
-            this.bunifuFlatButton3.ButtonText = "Chức năng gì đó";
-            this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.Iconimage = global::DSS_UI.Properties.Resources.ic_search_white_24dp_1x;
-            this.bunifuFlatButton3.Iconimage_right = null;
-            this.bunifuFlatButton3.Iconimage_right_Selected = null;
-            this.bunifuFlatButton3.Iconimage_Selected = null;
-            this.bunifuFlatButton3.IconMarginLeft = 0;
-            this.bunifuFlatButton3.IconMarginRight = 0;
-            this.bunifuFlatButton3.IconRightVisible = true;
-            this.bunifuFlatButton3.IconRightZoom = 0D;
-            this.bunifuFlatButton3.IconVisible = true;
-            this.bunifuFlatButton3.IconZoom = 50D;
-            this.bunifuFlatButton3.IsTab = true;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(3, 237);
-            this.bunifuFlatButton3.Name = "bunifuFlatButton3";
-            this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.selected = false;
-            this.bunifuFlatButton3.Size = new System.Drawing.Size(237, 48);
-            this.bunifuFlatButton3.TabIndex = 5;
-            this.bunifuFlatButton3.Text = "Chức năng gì đó";
-            this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
+            bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton4);
+            bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton2);
+            bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton1);
+            bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.LightGoldenrodYellow;
+            bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.BlueViolet;
+            bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.BurlyWood;
+            bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.DarkSlateGray;
+            bunifuGradientPanel1.Location = new System.Drawing.Point(0, 33);
+            bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            bunifuGradientPanel1.Quality = 10;
+            bunifuGradientPanel1.Size = new System.Drawing.Size(240, 567);
+            bunifuGradientPanel1.TabIndex = 1;
             // 
             // bunifuCustomLabel1
             // 
@@ -873,9 +826,9 @@
             this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(36, 23);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(145, 37);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(114, 37);
             this.bunifuCustomLabel1.TabIndex = 4;
-            this.bunifuCustomLabel1.Text = " VXT Studio";
+            this.bunifuCustomLabel1.Text = "DSS HUS";
             // 
             // bunifuFlatButton4
             // 
@@ -883,7 +836,7 @@
             this.bunifuFlatButton4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton4.BorderRadius = 0;
-            this.bunifuFlatButton4.ButtonText = "Nhập ảnh";
+            this.bunifuFlatButton4.ButtonText = "Nhập sửa dữ liệu";
             this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
@@ -906,7 +859,7 @@
             this.bunifuFlatButton4.selected = false;
             this.bunifuFlatButton4.Size = new System.Drawing.Size(237, 48);
             this.bunifuFlatButton4.TabIndex = 2;
-            this.bunifuFlatButton4.Text = "Nhập ảnh";
+            this.bunifuFlatButton4.Text = "Nhập sửa dữ liệu";
             this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -918,7 +871,7 @@
             this.bunifuFlatButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "Tìm kiếm bằng ảnh";
+            this.bunifuFlatButton2.ButtonText = "Chức năng trợ giúp";
             this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
@@ -941,7 +894,7 @@
             this.bunifuFlatButton2.selected = false;
             this.bunifuFlatButton2.Size = new System.Drawing.Size(240, 48);
             this.bunifuFlatButton2.TabIndex = 1;
-            this.bunifuFlatButton2.Text = "Tìm kiếm bằng ảnh";
+            this.bunifuFlatButton2.Text = "Chức năng trợ giúp";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -950,7 +903,7 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "Danh sách";
@@ -982,53 +935,29 @@
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
-            // bunifuGradientPanelTop
+            // imageList1
             // 
-            this.bunifuGradientPanelTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanelTop.BackgroundImage")));
-            this.bunifuGradientPanelTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanelTop.Controls.Add(this.bunifuImageButton1);
-            this.bunifuGradientPanelTop.Controls.Add(this.label8);
-            this.bunifuGradientPanelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuGradientPanelTop.GradientBottomLeft = System.Drawing.Color.Black;
-            this.bunifuGradientPanelTop.GradientBottomRight = System.Drawing.Color.Black;
-            this.bunifuGradientPanelTop.GradientTopLeft = System.Drawing.Color.White;
-            this.bunifuGradientPanelTop.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanelTop.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanelTop.Name = "bunifuGradientPanelTop";
-            this.bunifuGradientPanelTop.Quality = 10;
-            this.bunifuGradientPanelTop.Size = new System.Drawing.Size(1000, 33);
-            this.bunifuGradientPanelTop.TabIndex = 0;
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // bunifuImageButton1
+            // dataGridViewDS
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(971, 6);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(22, 24);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 1;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.dataGridViewDS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDS.Location = new System.Drawing.Point(-4, 6);
+            this.dataGridViewDS.Name = "dataGridViewDS";
+            this.dataGridViewDS.Size = new System.Drawing.Size(745, 510);
+            this.dataGridViewDS.TabIndex = 1;
             // 
-            // label8
+            // textBox1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(953, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
-            this.label8.TabIndex = 0;
-            // 
-            // listViewPerson
-            // 
-            this.listViewPerson.Location = new System.Drawing.Point(3, 16);
-            this.listViewPerson.Name = "listViewPerson";
-            this.listViewPerson.Size = new System.Drawing.Size(379, 286);
-            this.listViewPerson.TabIndex = 1;
-            this.listViewPerson.UseCompatibleStateImageBehavior = false;
-            this.listViewPerson.SelectedIndexChanged += new System.EventHandler(this.listViewPerson_SelectedIndexChanged);
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(3, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(457, 35);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "NHẬP TỪ KHÓA";
             // 
             // bunifuThinButton22
             // 
@@ -1038,7 +967,8 @@
             this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
             this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton22.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuThinButton22.ButtonText = "ThinButton";
+            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
+            this.bunifuThinButton22.ButtonText = "Tìm kiếm";
             this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuThinButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
@@ -1047,39 +977,12 @@
             this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
             this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(98, 310);
+            this.bunifuThinButton22.Location = new System.Drawing.Point(495, -2);
             this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(181, 41);
-            this.bunifuThinButton22.TabIndex = 2;
+            this.bunifuThinButton22.Size = new System.Drawing.Size(181, 37);
+            this.bunifuThinButton22.TabIndex = 3;
             this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click_1);
-            // 
-            // bunifuCustomDataGrid1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(466, 45);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(240, 192);
-            this.bunifuCustomDataGrid1.TabIndex = 3;
             // 
             // Form1
             // 
@@ -1087,17 +990,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.bunifuGradientPanel2);
-            this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(bunifuGradientPanel1);
             this.Controls.Add(this.bunifuGradientPanelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.bunifuGradientPanelTop.ResumeLayout(false);
+            this.bunifuGradientPanelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.bunifuGradientPanel2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.bunifuGradientPanel3.ResumeLayout(false);
             this.bunifuGradientPanel5.ResumeLayout(false);
             this.bunifuGradientPanel4.ResumeLayout(false);
+            this.bunifuGradientPanel4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.bunifuGradientPanel6.ResumeLayout(false);
             this.bunifuGradientPanel6.PerformLayout();
@@ -1110,46 +1017,50 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.bunifuGradientPanel1.PerformLayout();
-            this.bunifuGradientPanelTop.ResumeLayout(false);
-            this.bunifuGradientPanelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            bunifuGradientPanel1.ResumeLayout(false);
+            bunifuGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDS)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanelTop;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImageAvatar;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel3;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel5;
+        private System.Windows.Forms.ListView listViewImage;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
-        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
+        private System.Windows.Forms.TabPage tabPage2;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel6;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel7;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage tabPage3;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel8;
+        private System.Windows.Forms.Panel panel2;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButtonSave;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButtonChooseImage;
+        private System.Windows.Forms.PictureBox pictureBoxAvatar;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox comboBoxSexual;
+        private System.Windows.Forms.ComboBox comboBoxYear;
+        private System.Windows.Forms.ComboBox comboBoxMonth;
+        private System.Windows.Forms.ComboBox comboBoxDay;
+        private System.Windows.Forms.RichTextBox richTextBoxDescription;
         private System.Windows.Forms.TextBox textBoxPosition;
         private System.Windows.Forms.TextBox textBoxHomeTown;
         private System.Windows.Forms.TextBox textBoxName;
@@ -1159,23 +1070,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBoxDescription;
-        private System.Windows.Forms.PictureBox pictureBoxAvatar;
-        private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButtonSave;
-        private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButtonChooseImage;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.OpenFileDialog openFileDialogImageAvatar;
-        private System.Windows.Forms.ComboBox comboBoxSexual;
-        private System.Windows.Forms.ComboBox comboBoxYear;
-        private System.Windows.Forms.ComboBox comboBoxMonth;
-        private System.Windows.Forms.ComboBox comboBoxDay;
-        private System.Windows.Forms.ListView listViewImage;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.DataGridView dataGridViewDS;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanelTop;
+        private System.Windows.Forms.TextBox textBox1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
-        private System.Windows.Forms.ListView listViewPerson;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
     }
 }
 

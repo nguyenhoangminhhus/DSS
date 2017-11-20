@@ -24,6 +24,10 @@ namespace DSS_UI
             tabControl.Appearance = TabAppearance.FlatButtons;
             tabControl.ItemSize = new Size(0, 1);
             tabControl.SizeMode = TabSizeMode.Fixed;
+
+           getListPersion();
+
+
         }
 
         private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
@@ -103,7 +107,7 @@ namespace DSS_UI
             }
             byte[] image = Helper.converseToByte(sourceParth);
             string description = richTextBoxDescription.Text;
-            Person person = new Person(name, sexual, dateOfBirth, hometown, position, image, description);
+            Person person = new Person(0,name, sexual, dateOfBirth, hometown, position, image, description);
             DatabaseProviders databaseProviders = new DatabaseProviders();
             databaseProviders.add(person);
 
@@ -125,28 +129,57 @@ namespace DSS_UI
             
             DatabaseProviders databaseProviders = new DatabaseProviders();
             List<Person> listPersons = databaseProviders.getAllPersion();
-            ImageList imageList = new ImageList();
-            imageList.ImageSize = new Size(200, 200);
-            for (int i = 0; i < listPersons.Capacity; i++)
+
+            DataGridViewImageColumn dgvImage = new DataGridViewImageColumn();
+            dgvImage.HeaderText = "ẢNH";
+            dgvImage.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            DataGridViewTextBoxColumn dgvId = new DataGridViewTextBoxColumn();
+            dgvId.HeaderText = "ID";
+            dgvId.Width = 20;
+            DataGridViewTextBoxColumn dgvName = new DataGridViewTextBoxColumn();
+            dgvName.HeaderText = "TÊN";
+
+            DataGridViewTextBoxColumn dgvDateOfBirth = new DataGridViewTextBoxColumn();
+            dgvDateOfBirth.HeaderText = "NGÀY SINH";
+
+            DataGridViewTextBoxColumn dgvPosition = new DataGridViewTextBoxColumn();
+            dgvPosition.HeaderText = "CHỨC VỤ";
+
+            
+            dataGridViewDS.Columns.Add(dgvId);
+            dataGridViewDS.Columns.Add(dgvImage);
+            dataGridViewDS.Columns.Add(dgvName);
+            dataGridViewDS.Columns.Add(dgvDateOfBirth);
+            dataGridViewDS.Columns.Add(dgvPosition);
+
+
+
+            dgvPosition.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // dataGridViewDS.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewDS.RowTemplate.Height = 120;
+            dataGridViewDS.AllowUserToAddRows = false;
+
+            for (int i = 0; i < listPersons.Count; i++)
             {
                 MemoryStream memStm = new MemoryStream(listPersons.ElementAt(i).image);
-                
+
                 Image image = Image.FromStream(memStm);
-                imageList.Images.Add(image);
-               
+                dataGridViewDS.Rows.Add(listPersons.ElementAt(i).id, listPersons.ElementAt(i).image, listPersons.ElementAt(i).name
+                    , listPersons.ElementAt(i).dateofbirth, listPersons.ElementAt(i).position);
 
-            }
-            listViewPerson.LargeImageList = imageList;
-            for (int i = 0; i < listPersons.Capacity; i++)
-            {
-                listViewPerson.Items.Add(listPersons.ElementAt(i).name, i);
 
+                Console.WriteLine(listPersons.ElementAt(i).name);
             }
-            bunifuCustomDataGrid1.DataSource = listPersons;
 
         }
 
         private void listViewPerson_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
 
         }

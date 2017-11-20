@@ -58,15 +58,16 @@ namespace DSS_UI.DA
 
                     while (reader.Read())
                     {
+                        int id = (int)reader[0];
                         string name = (string)reader[1];
                         string sexual = (string)reader[2];
-                        string dateofbirth = null;
+                        string dateofbirth = ((DateTime)reader[3]).ToString("d");
                         string homtown = (string)reader[4];
                         string position = (string)reader[5];
                         byte[] image = (byte[])reader[6];
                         string description = (string)reader[7];
 
-                        Person p = new Person(name, sexual, dateofbirth, homtown, position, image, description);
+                        Person p = new Person(id,name, sexual, dateofbirth, homtown, position, image, description);
                         personList.Add(p);
 
                     }

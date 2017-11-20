@@ -8,6 +8,7 @@ namespace DSS_UI.Models
 {
     public class Person
     {
+        public int id;
         public string name;
         public string sexual;
         public string dateofbirth;
@@ -20,8 +21,9 @@ namespace DSS_UI.Models
         {
         }
 
-        public Person(string name, string sexual, string dateofbirth, string homtown, string position,  byte[] image, string description)
+        public Person(int id ,string name, string sexual, string dateofbirth, string homtown, string position,  byte[] image, string description)
         {
+            this.id = id;
             this.name = name;
             this.sexual = sexual;
             this.dateofbirth = dateofbirth;
